@@ -1,0 +1,39 @@
+    color: $dark_grey;
+  }
+  small {
+    color: $blue;
+    margin: 0 0 0 0.5em;
+  }
+}
+
+// Media Queries
+
+@media only screen and (max-width:480px) {
+  .pull-right {
+    float: none; 
+  }
+  input {
+    width: 100%; 
+  }
+  label {
+    width: 100%;
+    display: inline-block;
+    float: left;
+    clear: both;
+  }
+  li, p {
+   width: 100%; 
+  }
+  input.btn {
+   margin: 1.5em 0 0.5em; 
+  }
+  h1 {
+   font-size: pxtoem(36, 16); 
+  }
+  h3 {
+    font-size: pxtoem(18, 16)
+  }
+  li small {
+   display: none; 
+  }
+}

@@ -39,6 +39,10 @@
     text-align: right;
 }
 
+@media screen and (max-width: 768px){
+     width: 100%;
+}
+
 #search{
     padding: 5px;
     font-size: 17px;

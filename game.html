@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Car Racing Game</title>
+
+    <style>
+
+        #gameCanvas {
+
+            border: 1px solid black;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <canvas id="gameCanvas" width="800" height="400"></canvas>
+
+    <script>
+
+        // Game variables
+
+        var canvas = document.getElementById("gameCanvas");
+
+        var ctx = canvas.getContext("2d");
+
+        var car = { x: 50, y: 200, width: 50, height: 30 };
+
+        var speed = 5;
+
+        // Event listener for key presses
+
+        document.addEventListener("keydown", keyDownHandler, false);
+
+        document.addEventListener("keyup", keyUpHandler, false);
+
+        // Key press handlers
+
+        var rightPressed = false;
+
+        var leftPressed = false;
+
+        function keyDownHandler(event) {
+
+            if (event.keyCode === 39) {
+
+                rightPressed = true;
+
+            } else if (event.keyCode === 37) {
+
+                leftPressed = true;
+
+            }
+
+        }
+
+        function keyUpHandler(event) {
+
+            if (event.keyCode === 39) {
+
+                rightPressed = false;
+
+            } else if (event.keyCode === 37) {
+
+                leftPressed = false;
+
+            }
+
+        }
+
+        // Game loop
+
+        function draw() {
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw the car
+
+            ctx.beginPath();
+
+            ctx.rect(car.x, car.y, car.width, car.height);
+
+            ctx.fillStyle = "#0095DD";
+
+            ctx.fill();
+
+            ctx.closePath();
+
+            // Update car position based on user input
+
+            if (rightPressed && car.x < canvas.width - car.width) {
+
+                car.x += speed;
+
+            } else if (leftPressed && car.x > 0) {
+
+                car.x -= speed;
+
+            }
+
+            requestAnimationFrame(draw);
+
+        }
+
+        // Start the game
+
+        draw();
+
+    </script>
+
+</body>
+
+</html>
+

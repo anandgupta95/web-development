@@ -57,6 +57,31 @@ input[type="checkbox"]:checked + ul {
   }
 }
 
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+/* Optional: Add some styling for better appearance */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Ensure first slide is visible on load */
+.slide:first-child {
+  display: block;
+}
 
 main {
   padding: 1rem;
